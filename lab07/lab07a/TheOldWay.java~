@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+/**
+ * ___Die&DiceGames(TheOldWay)__ 
+ * @author __Deniz Semih Özal__
+ * @version __11/25/2019__
+ */ 
+public class TheOldWay
+{
+  public static void main( String[] args)
+  {
+    Scanner scan = new Scanner( System.in);
+    
+    // constants
+    
+    // variables
+    int dice;
+    int numberOfRolls;
+    int counter;
+    // program code
+    dice = 0;
+    numberOfRolls = 0;
+    counter = 0;
+    while ( counter < 2)
+    {
+      do
+      {
+        dice = 1 + (int)(Math.random() * 6);
+      }while ( dice == 0);
+      
+      if ( dice == 6)
+      {
+        counter++;
+      }
+      numberOfRolls++;
+    }
+  }
+  
+}

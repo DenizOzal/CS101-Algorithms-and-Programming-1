@@ -1,0 +1,75 @@
+
+public class LibraryBook
+{
+  // properties
+  private String title;
+  private String author;
+  private String dueDate;
+  private int timesLoaned;
+  private boolean holded;
+  
+  // constructors
+  public LibraryBook( String title, String author, int timesLoaned)
+  {
+    this.title = title;
+    this.author = author;
+    dueDate = "";
+    this.timesLoaned = timesLoaned;
+    holded = false;
+  }
+  // methods 
+  // The method that arranges the due date( When the new due date is arranged, the number of time of loan increases)
+  public void loanBook( String dueDate)
+  {
+    if ( holded == true)
+    {
+      System.out.println ( "Ýt is already holded");
+    }
+    else
+    {
+      this.dueDate = dueDate;
+      timesLoaned++;
+      holded = true;
+    }
+  }
+  // The method that resets the due date
+  public void returnBook()
+  {
+    if ( holded == true)
+    {
+      dueDate = "";
+      holded = false;
+    }
+    else
+    {
+      System.out.println ( "There is no book to be returned");
+    }
+    
+  // The method that gives the information that how many times the book is loaned
+  }
+  public int getTimesLoaned()
+  {
+    return this.timesLoaned;
+  }
+  // The method is to learn whether it is already loaned or not
+  public boolean onLoan()
+  {
+    if ( holded == true)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
+  }
+  // The method that converts to string
+  
+  public String toString()
+  {
+    return ( title + " " + author + " " + timesLoaned);
+  }
+  
+  
+  
+}

@@ -1,0 +1,61 @@
+package hangmangame.extras;
+
+import javax.swing.*;
+import java.awt.*;
+import cs102.hangman.Hangman;
+import cs102.hangman.IHangmanView;
+import cs102.hangman.*;
+
+public class LabelsHangmanView extends JPanel implements IHangmanView
+{
+   // properties
+   private JLabel noOfTries, knownSoFar, usedWords, finishGame, maxTry;
+   
+   // constructors
+   public LabelsHangmanView()
+   {
+      noOfTries = new JLabel();
+      knownSoFar = new JLabel();
+      usedWords = new JLabel();
+      finishGame = new JLabel();
+      maxTry = new JLabel();
+      
+      setLayout( new GridLayout( 5,0));
+      setBackground( Color.GREEN);
+      setPreferredSize( new Dimension( 600,600));
+      add( noOfTries);
+      add( knownSoFar);
+      add( usedWords);
+      add( finishGame);
+      add( maxTry);
+   }
+   
+   public void updateView( Hangman hangman)
+   {
+      if ( hangman.isGameOver() == false)
+      {
+         noOfTries.setText( "Incorrect tries: " + hangman.getNumOfIncorrectTries());
+         knownSoFar.setText( "Known So Far: " + hangman.getKnownSoFar());
+         usedWords.setText( "Used Letters: " + hangman.getUsedLetters());
+         maxTry.setText( "Max Allowed Incorrect Tries: " + hangman.getMaxAllowedIncorrectTries());
+         finishGame.setText( "Game continues...");
+      }
+      else
+      {
+         if ( hangman.hasLost() == true)
+         {
+            knownSoFar.setText( "Secret Word: " + hangman.getKnownSoFar());
+            noOfTries.setText( "Incorrect tries: " + hangman.getNumOfIncorrectTries());
+            usedWords.setText( "Used Letters: " + hangman.getUsedLetters());
+            finishGame.setText( "Do not be upset :)) Try Again!!!");
+         }
+         else
+         {
+            knownSoFar.setText( "Known So Far: " + hangman.getKnownSoFar());
+            noOfTries.setText( "Incorrect tries: " + hangman.getNumOfIncorrectTries());
+            usedWords.setText( "Used Letters: " + hangman.getUsedLetters());
+            finishGame.setText( "Congratulations!!! You Won!");
+         }
+      }
+   }   
+}

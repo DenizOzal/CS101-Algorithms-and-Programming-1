@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+/**
+ * __program description___ 
+ * @author __your name___
+ * @version __date__
+ */ 
+public class TestLibraryBook
+{
+   public static void main( String[] args)
+   {
+      
+
+      
+    
+   }
+
+}

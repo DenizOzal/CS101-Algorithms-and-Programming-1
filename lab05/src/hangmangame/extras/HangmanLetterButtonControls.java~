@@ -1,0 +1,10 @@
+package hangmangame.extras;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import cs102.hangman.Hangman;
+import cs102.hangman.IHangmanView;
+
+public class HangmanLetterButtonControls extends LetterButtonControls implements IHangmanView
+{
+}

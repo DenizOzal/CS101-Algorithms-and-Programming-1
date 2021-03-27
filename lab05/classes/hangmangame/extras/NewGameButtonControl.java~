@@ -1,0 +1,27 @@
+package hangmangame.extras;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import cs102.hangman.Hangman;
+
+public class NewGameButtonControl extends JButton
+{
+   // properties
+   private Hangman hangman;
+   
+   // constructors
+   public NewGameButtonControl( Hangman hangman)
+   {
+      setText( "New Game");
+      this.hangman = hangman;
+      this.addActionListener( new ButtonControlListener());
+   }
+  
+   class ButtonControlListener implements ActionListener
+   {
+      public void actionPerformed( ActionEvent e)
+      {
+         hangman.initNewGame();
+      }
+   }     
+}

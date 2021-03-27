@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+/**
+ * __program description___ 
+ * @author __your name___
+ * @version __date__
+ */ 
+public class Lab04d
+{
+  public static void main( String[] args)
+  {
+    Scanner scan = new Scanner( System.in);
+    
+    // constants
+    
+    // variables
+    char ch;
+    int width;
+    int space;
+    // program code
+    ch = ' ';
+    width = 0;
+    System.out.println ( "Enter the character");
+    ch = scan.next().charAt(0);
+    System.out.println ( "Enter the width"); 
+    width = scan.nextInt();
+    int line = 1;
+    while ( line <= width)
+    {
+      System.out.println ( ch.charAt(0));
+      line++;
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  }
+  
+  
+}
